@@ -67,7 +67,13 @@
       idiomElements.forEach((idiom) => {
         idiom.addEventListener('click', () => {
           const meaning = idiom.dataset.meaning;
-          const meaningElement = idiom.parentNode.querySelector('.idiom-meaning');
+          let meaningElement = idiom.querySelector('.idiom-meaning');
+
+          if (!meaningElement) {
+            meaningElement = document.createElement('div');
+            meaningElement.classList.add('idiom-meaning');
+            idiom.appendChild(meaningElement);
+          }
 
           if (meaningElement.style.display === 'none') {
             meaningElement.style.display = 'block';
