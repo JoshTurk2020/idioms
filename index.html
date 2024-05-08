@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idiom Story</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #story-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .idiom {
+      cursor: pointer;
+      font-weight: bold;
+      color: #4CAF50;
+    }
+
+    .idiom:hover {
+      text-decoration: underline;
+    }
+
+    .idiom-meaning {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      font-style: italic;
+      margin-top: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Idiom Story</h1>
+    <div id="story-container">
+      <p>Once upon a time, there was a <span class="idiom" data-meaning="a person who is very clumsy or awkward">bull in a china shop</span> who wanted to learn some new English idioms. One day, they decided to <span class="idiom" data-meaning="to take action or do something without thinking it through">jump the gun</span> and started reading a book about them.</p>
+      <p>As they read, they realized that some idioms were as <span class="idiom" data-meaning="very straightforward and clear">clear as day</span>, while others were as <span class="idiom" data-meaning="very confusing or difficult to understand">clear as mud</span>. They were determined to <span class="idiom" data-meaning="learn or understand something thoroughly">get to the bottom of it</span>.</p>
+      <p>After some time, the <span class="idiom" data-meaning="a person who is very clumsy or awkward">bull in a china shop</span> started to <span class="idiom" data-meaning="to make progress or advance">get the ball rolling</span> and began to <span class="idiom" data-meaning="understand something completely">wrap their head around</span> the meanings of the idioms.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const idiomElements = document.querySelectorAll('.idiom');
+
+      idiomElements.forEach((idiom) => {
+        idiom.addEventListener('click', () => {
+          const meaning = idiom.dataset.meaning;
+          const meaningElement = idiom.parentNode.querySelector('.idiom-meaning');
+
+          if (meaningElement.style.display === 'none') {
+            meaningElement.style.display = 'block';
+            meaningElement.textContent = `Meaning: ${meaning}`;
+          } else {
+            meaningElement.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
